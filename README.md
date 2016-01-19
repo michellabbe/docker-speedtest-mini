@@ -33,3 +33,15 @@ benchmarking your network speeds, e.g.:
 
 `http://your_docker_host_ip`
 `http://your_docker_host_ip:8081`
+
+________________________________________
+### Upgrading
+The Speedtest Mini application usually expire after some time so you may need to update the image even though there is no newer build on Docker Hub.
+
+Upgrading the application inside the Docker image is easy.  Just pull the image again from Docker Hub, then stop/remove the container and create it again.  It will download the newer zip file while rebuilding:
+```sh
+docker pull mlabbe/speedtest-mini
+docker stop speedtest
+docker rm speedtest
+docker run --name=speedtest -d -p 80:80 mlabbe/speedtest-mini
+```
