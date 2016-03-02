@@ -21,7 +21,7 @@ ________________________________________
 ### Running the image
 In order to start the speedtest-mini container, use the following:
 ```sh
-docker run --name=speedtest -d -p 80:80 mlabbe/speedtest-mini
+docker run --restart=unless-stopped --name=speedtest -d -p 80:80 mlabbe/speedtest-mini
 ```
 
 You can also use a different port if you want.  You can keep the default built-in ports inside the container and just map them to different ports on the host, e.g.:
@@ -43,5 +43,5 @@ Upgrading the application inside the Docker image is easy.  Just pull the image 
 docker pull mlabbe/speedtest-mini
 docker stop speedtest
 docker rm speedtest
-docker run --name=speedtest -d -p 80:80 mlabbe/speedtest-mini
+docker run --restart=unless-stopped --name=speedtest -d -p 80:80 mlabbe/speedtest-mini
 ```
