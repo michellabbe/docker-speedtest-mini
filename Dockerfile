@@ -20,7 +20,7 @@ RUN apk --update add apache2 php-apache2   && \
     rm -rf /var/www/localhost/htdocs/*   && \
     mv /tmp/mini/* /var/www/localhost/htdocs/   && \
      #addgroup speedtest && adduser speedtest -s /bin/false -g speedtest   && \
-	adduser -S speedtest
+    adduser -S speedtest
     
 USER speedtest
 
