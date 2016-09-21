@@ -9,7 +9,7 @@ This is a Docker image to run Apache2 and Ookla's [Speedtest Mini](http://www.sp
 
 Total size of this image is:
 
-[![ImageLayers](https://badge.imagelayers.io/mlabbe/speedtest-mini:latest.svg)](https://imagelayers.io/?images=mlabbe/speedtest-mini:latest)
+[![](https://images.microbadger.com/badges/image/mlabbe/speedtest-mini.svg)](https://microbadger.com/images/mlabbe/speedtest-mini)
 
 ________________________________________
 ### Pulling from Docker hub
