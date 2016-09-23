@@ -3,13 +3,13 @@ FROM alpine:latest
 
 MAINTAINER Michel Labbe
 
-RUN apk --update add apache2 php5-apache2 \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm -rf /var/cache/apk/* \
+RUN apk add --no-cache apache2 php5-apache2 \
          # fix "httpd: Could not reliably determine the server's fully qualified domain name" error \
     && sed -i '1s/^/ServerName localhost \r\n\r\n/' /etc/apache2/httpd.conf \
          # fix "could not create /run/apache2/httpd.pid" error \
     && mkdir /run/apache2 \
+         # Change listen port to a port greater than 1024 to allow a non-root user to start Apache \
+    && sed -i 's/Listen\ 80/Listen\ 8080/g' /etc/apache2/httpd.conf \
          # Download and install Ookla Speedtest Mini \
     && wget http://c.speedtest.net/mini/mini.zip -O /tmp/mini.zip \
     && unzip /tmp/mini.zip -d /tmp/ \
@@ -19,13 +19,17 @@ RUN apk --update add apache2 php5-apache2 \
          # Make sure default website dir is empty before moving files \
     && rm -rf /var/www/localhost/htdocs/* \
     && mv /tmp/mini/* /var/www/localhost/htdocs/ \
-	&& adduser -S speedtest \
-    && chown -R speedtest /var/www/localhost/htdocs/
+    && adduser -S speedtest \
+    && chown -R speedtest /var/www/logs \
+    && chown -R speedtest /var/www/run \
+    && chown -R speedtest /var/log/apache2 \
+    && chown -R speedtest /run/apache2 \
+    && chown speedtest /usr/sbin/httpd
     
-#USER speedtest
+USER speedtest
 
 # Listen to required port(s)
-EXPOSE 80
+EXPOSE 8080
 
 ENTRYPOINT ["/usr/sbin/httpd"]
 
