@@ -3,7 +3,7 @@
 # docker: speedtest-mini -EXPIRED-
 ________________________________________
 Warning: Speedtest Mini has been discontinued by Oookla.  This image has expired and is no longer usable.
-I have released a new image [mlabbe/openspeedtest](https://hub.docker.com/r/mlabbe/openspeedtest/) based on OpenSpeedTest as a replacement for this one.
+I have released a new image ([mlabbe/openspeedtest](https://hub.docker.com/r/mlabbe/openspeedtest/)) based on OpenSpeedTest as a replacement for this one.
 ________________________________________
 
 
