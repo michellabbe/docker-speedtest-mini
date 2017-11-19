@@ -1,6 +1,11 @@
 [![Docker Stars](https://img.shields.io/docker/stars/mlabbe/speedtest-mini.svg)](https://hub.docker.com/r/mlabbe/speedtest-mini/) [![Docker Pulls](https://img.shields.io/docker/pulls/mlabbe/speedtest-mini.svg)](https://hub.docker.com/r/mlabbe/speedtest-mini/)
 
-# docker: speedtest-mini
+# docker: speedtest-mini -EXPIRED-
+________________________________________
+Warning: Speedtest Mini has been discontinued by Oookla.  This image has expired and is no longer usable.
+I have released a new image [mlabbe/openspeedtest](https://hub.docker.com/r/mlabbe/openspeedtest/) based on OpenSpeedTest as a replacement for this one.
+________________________________________
+
 
 This is a Docker image to run Apache2 and Ookla's [Speedtest Mini](http://www.speedtest.net/fr/mini.php) application for benchmarking network performance.
 
