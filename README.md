@@ -3,13 +3,14 @@
 # docker: speedtest-mini -EXPIRED-
 ________________________________________
 Warning: Speedtest Mini has been discontinued by Oookla.  This image has expired and is no longer usable.
-I have released a new image ([mlabbe/openspeedtest](https://hub.docker.com/r/mlabbe/openspeedtest/)) based on OpenSpeedTest as a replacement for this one.
+The free Speedtest Custom offered by Ookla as a replacement for Speedtest Mini cannot be run on your own server to test LAN speed (not internet speed).
+I have released a new image ([mlabbe/openspeedtest](https://hub.docker.com/r/mlabbe/openspeedtest/)) based on OpenSpeedTest as a replacement image to test LAN speed.
 ________________________________________
 
 
 This is a Docker image to run Apache2 and Ookla's [Speedtest Mini](http://www.speedtest.net/fr/mini.php) application for benchmarking network performance.
 
-[![Speedtest Mini](http://www.speedtest.net/images/speedtestmini.png)](http://www.speedtest.net/fr/mini.php)
+[![Speedtest Mini](https://raw.githubusercontent.com/michellabbe/docker-speedtest-mini/master/speedtestmini.png)](http://www.speedtest.net/fr/mini.php)
 
 - Runs as non-root user
 - Small image size
